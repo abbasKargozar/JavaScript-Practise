@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make The Armestrang Number</title>
+    <style>
+        body{
+            background-color: rgba(135, 207, 235, 0.3);
+        }
+        .continer{
+            margin: 0 auto;
+            width: 960px;
+            height: auto;
+            background-color: rgba(127, 255, 212, 0.5);
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="continer">
+        <h1>Exercise No:03 The Armstrong numbers.</h1>
+        <h2>What are Armstrong numbers?</h2>
+        <p>
+            Armstrong numbers are numbers that are equal to the sum of their own digits,
+             each raised to the power of the number of digits. 
+             For example, 153 is an Armstrong number because:
+             1<sup>3</sup> + 5<sup>3</sup> + 3<sup>3</sup> = 153
+        </p>
+
+        <h2>Armstrong Number Explorer </h2>
+        <p>
+            Curious to discover more of these amazing numbers?
+            Just enter your desired number of digits below and let the system find them for you.
+            You can try searching for 2-digits, but there are no 2-digit Armstrong numbers!
+            Enter a larger number and see the list.
+        </p>
+        <form>
+            <label for="userdigit">Make Armestrang</label>
+            <input type="number" id="userdigit" value="3" min="1" max="6" required>
+            <button type="submit" onclick="answer()" > Get your list</button>
+        </form>
+        <p id="answer"></p>
+        
+
+    </div>
+    
+
+
+    <script>
+
+        
+            // Function section; start
+            /* rang() function takes an integer n and returns the start 
+            and end of the n‑digit number range.*/ 
+
+            function rang(len){
+                let rawNumber = 1;
+                
+                for (let i = 1; i < len; i++){
+                    rawNumber += "0"
+                }
+                let minNumber = parseInt(rawNumber)
+                let maxNumber = parseInt(rawNumber) * 10
+
+                return [minNumber, maxNumber]
+            }
+            //--------------------------------------------------------//
+            function Armstrong(len = 3){
+                if (len <= 0 || len > 6){
+                    return "please enter a number bitween 1-6"
+                }else{
+                     userRange = rang(len);
+                let armstrongNumber = [];
+                for(let i = userRange[0]; i < userRange[1]; i++){
+
+                    let iString = String(i).split("")
+                    let arpower = parseInt(iString.length)
+                    let rawArmstrong = iString.map((number) => number ** arpower);
+                    let treatNumber = rawArmstrong.reduce((acc,total) => acc + total)
+                    //return `${treatNumber}: ${typeof treatNumber} and min: ${userRange[0]},max: ${userRange[1]}`
+                    if(treatNumber == i){
+                        armstrongNumber.push(i)
+                    }
+                }
+                return armstrongNumber
+            
+            }
+
+                }
+               
+            //-----------------------------------------------------------//
+            function answer(){
+                let userlist = Armstrong(document.getElementById("userdigit").value)
+                document.getElementById("answer").innerHTML = userlist; 
+
+            // program section; end
+            }
+
+            // Function section; end
+
+            // program section; start
+           
+
+
+                </script>
+            </body>
+</html>
