@@ -37,8 +37,8 @@
         </p>
         <form>
             <label for="userdigit">Make Armestrang</label>
-            <input type="number" id="userdigit" value="3" min="1" max="6" required>
-            <button type="submit" onclick="answer()" > Get your list</button>
+            <input type="number" id="userdigit" value="3" min="1" max="9" required>
+            <button type="button" onclick="answer()" > Get your list</button>
         </form>
         <p id="answer"></p>
         
@@ -67,8 +67,8 @@
             }
             //--------------------------------------------------------//
             function Armstrong(len = 3){
-                if (len <= 0 || len > 6){
-                    return "please enter a number bitween 1-6"
+                if (len <= 0 || len > 9){
+                    return "please enter a number bitween 1-9"
                 }else{
                      userRange = rang(len);
                 let armstrongNumber = [];
@@ -93,15 +93,7 @@
             function answer(){
                 let userlist = Armstrong(document.getElementById("userdigit").value)
                 document.getElementById("answer").innerHTML = userlist; 
-
-            // program section; end
             }
-
-            // Function section; end
-
-            // program section; start
-           
-
 
                 </script>
             </body>
