@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator &#128425;</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./calculator.js" defer></script>
+</head>
+<body>
+    <div class="calculator-main-body">
+
+        <table class="screen">
+            <tr>
+                <td colspan="4"  id="calculatorScreen">
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4" id="answer">
+                
+                </td>
+            </tr>
+        </table>
+
+    <div class="buttons">
+     
+        <div class="numbers">
+
+            <table>
+                <tr>
+                    <td onclick="capture(this)">1</td>
+                    <td onclick="capture(this)">2</td>
+                    <td onclick="capture(this)">3</td>
+                </tr>
+                <tr>
+                    <td onclick="capture(this)">4</td>
+                    <td onclick="capture(this)">5</td>
+                    <td onclick="capture(this)">6</td>
+                </tr>
+
+                <tr>
+                    <td onclick="capture(this)">7</td>
+                    <td onclick="capture(this)">8</td>
+                    <td onclick="capture(this)">9</td>
+                </tr>
+
+                <tr>
+                    <td onclick="capture(this)">.</td>
+                    <td onclick="capture(this)">0</td>
+                    <td>
+                        <table>
+                            <tr><td onclick="deleteAll()">C</td>
+                            <td onclick="stepback()">«</td></tr>
+                        </table>
+                            
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="operator">
+            <table>
+                <tr>
+                    <td onclick="capture(this)">+</td>
+                </tr>
+
+                <tr>
+                    <td onclick="capture(this)">-</td>
+                </tr>
+
+                <tr>
+                    <td onclick="capture(this)">*</td>
+                </tr>
+
+                <tr>
+                    <td onclick="capture(this)">/</td>
+                </tr>
+
+                <tr>
+                    <td onclick="calculatorCore(document.getElementById('calculatorScreen').innerText)">=</td>
+                </tr>
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+</body>
+</html>

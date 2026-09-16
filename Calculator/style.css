@@ -1,0 +1,98 @@
+body{
+    background-color: tomato;
+}
+
+.calculator-main-body{
+    background-color: rgba(2, 43, 2, 0.2);
+    backdrop-filter:blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 800px;
+    height: 500px;
+}
+
+.screen{
+    background-color: rgba(245, 222, 179, 0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(245, 222, 179, 0.6);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    width: 90%;
+    height: 60px;
+
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+#calculatorScreen,
+#answer{
+    font-size: 1.4em;
+    color: blue;
+}
+
+.buttons{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+
+}
+
+.numbers{
+    background-color: rgba(245, 222, 179, 0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(245, 222, 179, 0.6);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    margin: 15px auto;
+    justify-content: center;
+    align-content: center;
+    
+
+}
+
+.operator{
+    background-color: rgba(245, 222, 179, 0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(245, 222, 179, 0.6);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    margin: 15px auto;
+    padding: 10px 1px;
+
+}
+
+
+
+.operator td{
+    width: 95px;
+    height: 65px;
+    border: 1px solid black;
+
+}
+
+.operator tr{
+    margin: 5px;
+}
+
+.numbers td{
+    width: 180px;
+    height: 65px;
+    border: 1px solid black;
+}
+
+.numbers table{
+    margin: 0 auto;
+}
+
+.numbers td,
+.operator td{
+    text-align: center;
+    align-items: center;
+
+    font-weight: 900;
+    font-size: 1.3em;
+}
