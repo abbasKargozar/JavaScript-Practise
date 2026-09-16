@@ -15,3 +15,6 @@ During my web searches, I encountered the concept of `Event Listeners`, which pr
 * HTML5
 * CSS
 * JavaScript
+
+# Preview
+<img src="Calculator.png">
