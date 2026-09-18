@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBI</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./JS_core.js" defer></script>
+</head>
+<body>
+   
+        <form  class="continer" action="#" method="dialog">
+        <label id="hight-id" for="hight">How tall are you?</label>
+        <input id="hight" type="number",
+            placeholder="Enter in cm like:181"
+        >
+        <label id="wight-id" for="wight">How much do you wight?</label>
+        <input id="wight" type="number",
+            placeholder="Enter in kg like: 100">
+        
+        <button onclick="doer()">Calculate</button>
+        </form>
+
+
+        <div class="mbi-first-answer" id="mbi-first-answer">
+            <div id="answerbox" class="answerbox">
+                <p id="fast"></p>
+                <p style="font-size: 1.2em; font-weight: 800; color:black;">Recomedations</p>
+                <p id="nutrition"></p>
+                <p id="exercise"></p>
+                <p id="medical"></p>
+            </div>
+        </div>
+
+</body>
+</html>
+
