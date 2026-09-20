@@ -1,9 +1,9 @@
 
-const mbiGuidelines = [
+const bmiGuidelines = [
   {
     category: "Underweight",
-    minmbi: null,
-    maxmbi: 18.49,
+    minbmi: null,
+    maxbmi: 18.49,
     rangeLabel: "< 18.5",
     recommendations: {
       nutrition: "Clean caloric surplus using nutrient-dense foods (nuts, avocados, olive oil, quality proteins). Avoid empty calories.",
@@ -13,8 +13,8 @@ const mbiGuidelines = [
   },
   {
     category: "Normal Weight",
-    minmbi: 18.5,
-    maxmbi: 24.99,
+    minbmi: 18.5,
+    maxbmi: 24.99,
     rangeLabel: "18.5 - 24.9",
     recommendations: {
       nutrition: "Maintain balanced whole-food diet with adequate fiber and protein (80/20 rule).",
@@ -24,19 +24,19 @@ const mbiGuidelines = [
   },
   {
     category: "Overweight",
-    minmbi: 25.0,
-    maxmbi: 29.99,
+    minbmi: 25.0,
+    maxbmi: 29.99,
     rangeLabel: "25.0 - 29.9",
     recommendations: {
       nutrition: "Moderate, sustainable caloric deficit; reduce refined carbs and increase protein/fiber for satiety.",
-      exercise: "Increase daily NEAT (steps/movement) and combine cardio with resistance training.",
+      exercise: "Increase daily NEAT (steps/movement) and cobmine cardio with resistance training.",
       medical: "Annual check-up for blood pressure, fasting blood glucose, and lipid panel."
     }
   },
   {
     category: "Obesity",
-    minmbi: 30.0,
-    maxmbi: null,
+    minbmi: 30.0,
+    maxbmi: null,
     rangeLabel: "≥ 30.0",
     recommendations: {
       nutrition: "Structured dietary plan with professional guidance; avoid extreme/yo-yo diets.",
@@ -48,42 +48,56 @@ const mbiGuidelines = [
 
 
 
-function mbi(){
+function bmi(){
     let hight = document.getElementById("hight").value 
-    let wight = document.getElementById("wight").value
+    let weight = document.getElementById("weight").value
     let hight2 = hight/100;
-    let mbiCalculated = 1.3 * (wight / (hight2 * hight2));
-    return mbiCalculated
+    let bmiCalculated = weight / (hight2 * hight2);
+    return bmiCalculated
 }
 
-function mbiInterpret(mbi){
-    if(mbi < 18.5){
+function bmiInterpret(bmi){
+    if(bmi > 0 && bmi < 18.5){
         return 'Underweight'
-    }else if (mbi >= 18.5 && mbi <= 24.9){
+    }else if (bmi >= 18.5 && bmi < 25){
         return 'Normal Weight'
-    }else if (mbi >= 25 && mbi <= 29.9){
+    }else if (bmi >= 25 && bmi < 30){
         return 'Overweight'
-    }else if(mbi >= 30){
+    }else if(bmi >= 30){
         return 'Obesity'
     }else{
-        return false
+        return '[Error]: False Entry; do it again'
     }
 }
 
 function doer(){
-    let value =  mbiInterpret(mbi());
-    let showAnswer = document.getElementById('answerbox')
+    let value =  bmiInterpret(bmi());
+    let showAnswer = document.getElementById('answerbox');
+    let bmiCategory = document.getElementById('bmi-category');
     showAnswer.classList.replace('answerbox','showAnswerBox')
+    bmiCategory.classList.replace('bmi-category','bmi-category-show')
 
-    for (let i = 0; i < mbiGuidelines.length; i++){
-    if(mbiGuidelines[i].category ==  value){
-        document.getElementById('fast').innerHTML = value
-        document.getElementById('nutrition').innerHTML = mbiGuidelines[i].recommendations.nutrition
-        document.getElementById('exercise').innerHTML = mbiGuidelines[i].recommendations.exercise
-        document.getElementById('medical').innerHTML = mbiGuidelines[i].recommendations.medical
+
+    for (let i = 0; i < bmiGuidelines.length; i++){
+    if(bmiGuidelines[i].category ==  value){
+        document.getElementById('bmi-category').innerHTML = value
+        document.getElementById('nutrition').innerHTML = bmiGuidelines[i].recommendations.nutrition
+        document.getElementById('exercise').innerHTML = bmiGuidelines[i].recommendations.exercise
+        document.getElementById('medical').innerHTML = bmiGuidelines[i].recommendations.medical
         break;
     }
 }  
 }
 
+let copyBtn = document.querySelector('#copy-btn')
 
+let bmiCategory = document.getElementById('bmi-category');
+let bmiRecom = document.getElementById('answerbox');
+
+
+copyBtn.addEventListener('click', async () => {
+  copyBtn.innerText = 'Copied!'
+
+  let copyText = `${bmiCategory.innerText}\n${bmiRecom.innerText}`
+  await navigator.clipboard.writeText(copyText)
+}) 

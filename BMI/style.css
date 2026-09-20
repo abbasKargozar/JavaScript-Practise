@@ -1,18 +1,42 @@
 body{
-    background-color: rgba(0, 0, 128, 0.8);
+    background-color: #F8FAFC;
 }
 
-.continer{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
 
 #hight,
 #hight-id,
-#wight,
-#wight-id
+#weight,
+#weight-id
 {
     padding: 5px 5px 5px 20px;
+   
+}
+#hight,
+#weight{
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+#hight:hover,
+#weight:hover{
+    background-color: #CBD5E1;
+    border: 1px solid #0D9488;
+}
+
+
+.calculate-btn{
+    background-color: #09b7a9a0;
+    color: #212c26;
+    padding: 2px;
+    font-weight: 800;
+    transition: ease-in-out;
+    transition-duration: 0.5s;
+}
+
+.calculate-btn:hover{
+    background-color: #086059;
+    color: #dcdcdc;
+    transform: scale(1.1);
+
 }
 
 .continer{
@@ -20,38 +44,85 @@ body{
     display:grid;
     grid-column: 1;
     
-    background-color: rgba(241, 28, 8, 0.4);
+    background-color: #0D9488;
     backdrop-filter: blur(10px);
+    box-shadow: #E2E8F0;
     width: 500px;
-    color: antiquewhite;
+    color: #FFFFFF;
     font-weight: 500;
     font-size: 1.2em;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-color: #E2E8F0;
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
 }
 
 
-.mbi-first-answer{
+.bmi-first-answer{
     margin: 10px auto;
-    text-align: center;
+
 
     width: 500px;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
 
     margin-top: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 
-    background-color: rgba(245, 222, 179, 0.3);
+    background-color: #CCFBF1;
     backdrop-filter: blur(10px);
 
-    color: bisque;
-    font-size: 1.3em;
+    color: #115E59;
+    font-size: 1.1em;
 
+    border-color: #E2E8F0;
+    border-style: solid;
+    border-width: 0px 1px 1px 1px ;
 
 }
+
 
 .answerbox{
     display:none;
+
 }
 .showAnswerBox{
     display:block;
+    text-justify: left;
+    padding: 0px 15px 0px 15px;
+    
+}
+
+.user-tool{
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+
+.copy-btn{
+    height: 30px;
+    color: #CCFBF1;
+    font-weight: 500;
+    background-color: #212c26;
+    margin: 0;
+    padding: 3px;
+
+}
+
+.bmi-category{
+    visibility: hidden;
+}
+
+.bmi-category-show{
+    visibility: visible;
+    padding: 3px;
+    text-align: center;
+    background-color: #f0f8ff80;
+    backdrop-filter: blur(15px);
+    border-bottom: 2px dotted #E5E8E4;
+    color: #212c26 ;
+    margin: 0px;
+    height: 22px;
 }

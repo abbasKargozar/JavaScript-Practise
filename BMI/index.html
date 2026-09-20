@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBI</title>
+    <title>BMI</title>
 
     <link rel="stylesheet" href="./style.css">
     <script src="./JS_core.js" defer></script>
@@ -15,23 +15,37 @@
         <input id="hight" type="number",
             placeholder="Enter in cm like:181"
         >
-        <label id="wight-id" for="wight">How much do you wight?</label>
-        <input id="wight" type="number",
+        <label id="weight-id" for="wight">How much do you wigh?</label>
+        <input id="weight" type="number",
             placeholder="Enter in kg like: 100">
         
-        <button onclick="doer()">Calculate</button>
+        <button onclick="doer()" class="calculate-btn">Calculate</button>
         </form>
 
 
-        <div class="mbi-first-answer" id="mbi-first-answer">
+        <div class="bmi-first-answer" id="bmi-first-answer">
+
+            <div class="user-tool">
+                <p id="bmi-category" class="bmi-category"></p>
+                <button id="copy-btn" class="copy-btn">Copy</button>
+            </div>
+
             <div id="answerbox" class="answerbox">
-                <p id="fast"></p>
-                <p style="font-size: 1.2em; font-weight: 800; color:black;">Recomedations</p>
-                <p id="nutrition"></p>
-                <p id="exercise"></p>
-                <p id="medical"></p>
+                <p>Recomedations</p>
+                <dl>
+                    <dt>Nutrition:</dt>
+                    <dd id="nutrition"></dd>
+
+                    <dt>Exercise:</dt>
+                    <dd id="exercise"></dd>
+
+                    <dt>Medical:</dt>
+                    <dd id="medical"></dd>
+
+                </dl>
             </div>
         </div>
+
 
 </body>
 </html>
